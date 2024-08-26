@@ -1,8 +1,8 @@
 # Resources for Software Development on AIMS HPCs
 
 Patrick Myers - HPC Manager
-Email: myerspat@umich.edu
-Phone: 216-296-2884
+- Email: myerspat@umich.edu
+- Phone: 216-296-2884
 
 ## HPC Guidelines
 
