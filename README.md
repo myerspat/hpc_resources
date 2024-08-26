@@ -12,5 +12,5 @@ Phone: 216-296-2884
 
 ## Software Development Resources
 
-- [Scientific Computing (NERS 570) Lecture Slides](./resources/ners570_lectures/ners570.md)
+- [Scientific Computing (NERS 570) Lecture Slides](resources/ners570_lectures/README.md)
 - [SSH Tunneling with Jupyter Notebooks](./resources/jupyter_tunnel.md)
