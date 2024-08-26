@@ -30,7 +30,7 @@ useradd -m -s /bin/bash -p $(echo "$password" | openssl passwd -1 -stdin) $usern
 passwd --expire $username > /dev/null
 
 # Append to user profile with alias and thread limits
-num_threads=8
+num_threads=4
 echo "
 # Aliases
 alias ~='cd ~'
@@ -42,12 +42,10 @@ alias ll='ls -alF'
 alias la='ls -a'
 alias l='ls -CF'
 
+alias aims_state='source /usr/local/bin/aims_state.sh'
+
 # Limit CPU usage
-export MKL_NUM_THREADS=$num_threads
-export NUMEXPR_NUM_THREADS=$num_threads
-export OMP_NUM_THREADS=$num_threads
-export OPENBLAS_NUM_THREADS=$num_threads
-export VECLIB_MAXIMUM_THREADS=$num_threads" >> /home/${username}/.profile
+aims_state -s debug" >> /home/${username}/.profile
 
 #------------#
 # VARIATIONS #
