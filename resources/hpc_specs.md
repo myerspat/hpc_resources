@@ -1,4 +1,4 @@
-# AIMS HPCs
+# Specs of AIMS Clusters
 
 ## AIMS01
 

@@ -1,14 +1,14 @@
-# Resources for Software Development on AIMS HPCs
+# Resources for Software Development on AIMS Clusters
 
-Patrick Myers - HPC Manager
+Patrick Myers - System Admin
 - Email: myerspat@umich.edu
 - Phone: 216-296-2884
 
-## HPC Guidelines
+## Cluster Guidelines
 
-- [AIMS HPC Specs](./resources/hpc_specs.md)
-- [Getting Started with AIMS HPCs](./resources/hpc_start.md)
-- [AIMS HPC Policy](./resources/hpc_policy.md)
+- [AIMS Cluster Specs](./resources/hpc_specs.md)
+- [Getting Started with AIMS Clusters](./resources/hpc_start.md)
+- [AIMS Cluster Usage Policy](./resources/hpc_policy.md)
 
 ## Software Development Resources
 
