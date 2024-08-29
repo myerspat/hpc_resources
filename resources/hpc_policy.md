@@ -24,13 +24,17 @@ Below includes the guidelines for utilizing the computational resources of the A
 ### CPUs
 
 For managing CPU utilization we will use the native Linux commands `nice` and `renice`. These commands determine the priority of your tasks and allows the system to automatically allocate resources depending on process priority. Without running a command with `nice`, your task would have a value of 0 as shown in the NI column of `htop` for the Jupyter Notebook run by `myerspat` below.
+
 ![[supporting/htop_0.png]]
+
 The `nice` value ranges from -20 to 19 with a lower number indicating a higher priority. Negative `nice` values are reserved for system processes executed by the root as these are a necessity. Users are limited to the range of 0 to 19. To run a command with a `nice` value of 15 you simply add `nice -15` before your command. For example, when launching a Jupyter Notebook like shown above, we can run
 ```sh
 nice -15 jupyter notebook
 ```
 Therefore, any Python code executed by the notebook is subject to that priority. Running `htop` again we see
+
 ![[./supporting/htop_15.png]]
+
 Notice the values for `myerspat`'s notebook in the NI column has changed to 15 and the CPU utilization by these processes (shown in the bars at the top) have changed color to a blue. Processes with a higher priority value (negative `nice`) become more red while lower priority tasks become blue with 0 being green. These colors should aid other users in determining how free the system is for processes they may submit.
 
 `nice` allows users to execute commands that may use all CPUs; however, how nice you are to others dictates how willing you are to relinquish resources to other processes. Therefore, during low activity you will be able to use all CPU resources. This ensures you are not restricted to a certain set of resources even when all CPUs are open. 
