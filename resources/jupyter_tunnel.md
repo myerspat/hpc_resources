@@ -9,7 +9,7 @@ where `XXXX` is a port number of your choice. Do not choose the following
 
 - Patrick Myers: 8890
 
-After resourcing your `~/bashrc`, anytime you run `tunnel` Jupyter will start assuming your Python environment has Jupyter Notebooks installed. On your local machine add the following to your `~/.profile`:
+After resourcing your `~/bashrc`, anytime you run `tunnel` Jupyter will start, assuming your Python environment has Jupyter Notebooks installed. On your local machine add the following to your `~/.profile`:
 ```sh
 alias tunnel="ssh -N -f -L localhost:8888:localhost:XXXX"
 ```
