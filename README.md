@@ -1,4 +1,4 @@
-# Resources for Software Development on AIMS Clusters
+# Resources for Computing on AIMS Clusters
 
 Patrick Myers - System Admin
 - Email: myerspat@umich.edu
