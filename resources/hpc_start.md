@@ -12,7 +12,7 @@ Once approved, download the UMICH VPN at https://its.umich.edu/enterprise/wifi-n
 
 The System Admin will create a username and password that will look like
 - Username: `<your-unique-name>`
-- Password: `<your-unique-name>1234`
+- Password: `Some-Easy-Password`
 
 You can then SSH into the system by running `ssh <your-unique-name>@ners-aims0X.engin.umich.edu>`, where `X` is the AIMS machine the System Admin is giving you access. You'll be prompted to change your password and then you're ready to go.
 
@@ -25,4 +25,4 @@ Host aims0X
 	ControlPersist 8620
 	ServerAliveInterval 60
 ```
-Now you can SSH in by running `ssh aims0X`.
+Now you can SSH in by running `ssh aims0X`, where `X` is the machine number the admin informs you about (e.g. 1 or 2 for aims01 or aims02).
