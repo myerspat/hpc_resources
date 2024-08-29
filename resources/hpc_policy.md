@@ -19,7 +19,8 @@ Resource utilization will depend on the priority of the task taking into account
 
 - [INL HPC](https://inl.gov/ncrc/)
 
-Below includes the guidelines for utilizing the computational resources of the AIMS clusters. Following these guidelines respects the time of other researchers using the machines.
+See ***inl_hpc.md* for more information on how to apply to an INL HPC account. 
+Below includes the guidelines for utilizing the computational resources of the AIMS clusters. Following these guidelines respects the time of other researchers using the machines. 
 
 ### CPUs
 
@@ -57,6 +58,8 @@ A user is limited to one 0-9 priority execution at any given time. Please change
 
 Please respect these guidelines for running scripts on any AIMS cluster. **Any process should not run longer than 48 hours.**  Activity may vary from day-to-day; therefore, the System Admin reserves the right to reallocate priority of existing processes using `renice`.  If a user feels a process or other user is violating these guidelines, contact the System Admin. Users found in violation are subject to task termination of `renice`.
 
+**Please, note that the available resources and their flexibility of use could change if AIMS obtained new machines. These guidelines are now appliable to aims01 and aims02 with a total of 208 CPU cores (416 threads) and 6 total GPUs**.  
+
 ### GPUs
 
 GPUs do not come with native resource allocation commands such as `nice` and `renice`; therefore, the guidelines around this hardware is on all users to enforce and follow. Additionally, the number of total available GPUs in the AIMS cluster system are much less than available CPU threads. The policy around GPUs is as follows
@@ -65,8 +68,10 @@ GPUs do not come with native resource allocation commands such as `nice` and `re
 - A user may also submit a parallel job using at most 2 GPUs lasting not longer than 1 hour (for parallel testing) without notification to other users.
 - **All other jobs may not utilize more than 2 GPUs for up to 48 hours.** Additionally, you must notify other users in the `#aims-clusters` channel outlining the same information for resource notification discussed in the CPUs section. If you are not relying heavily on CPUs and your `nice` level is not between 0-9 then you do not need to comment on `nice` value.
 
-It is up to the users to ensure their tasks are following these guidelines; however, a common command for limiting GPU utilization is the `CUDA_AVAILABLE_DEVICES` environment variable. This variable controls which GPU the task runs on. For example, we can run a Python script, `my_script.py`, on GPU 1 with the following
+It is up to the users to ensure their tasks are following these guidelines; however, a common command for limiting GPU utilization is the `CUDA_AVAILABLE_DEVICES` environment variable. This variable controls which GPU the task runs on. For example, we can run a Python script, `my_script.py`, on GPU #2 with the following (note that GPU index starts from 0 for GPU#1)
 ```sh
 CUDA_AVAILABLE_DEVICE=1 python my_script.py
 ```
-Users who do not follow these guidelines may have their scripts terminated by the System Admin. Additionally, cereal offenders may loose access to AIMS clusters. 
+Please, note that fine-tuning Large Language Models of 7 billion parameters or more (like Falcon and LLaMA) must be done on INL HPC not on AIMS clusters, as you will likely need 4 GPUs to complete this task. If you can ensure your job can be done in 1-2 GPUs and within the timeframe, then follow the guidelines above. 
+
+Users who do not follow these guidelines may have their scripts terminated by the System Admin. Additionally, cereal offenders may lose access to AIMS clusters. 
